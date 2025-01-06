@@ -15,10 +15,11 @@ fn main() {
     let args = App::parse();
 
     let mut hm = HashMap::<u16, fn()>::new();
+    hm.insert(1, problems::id1::run);
     hm.insert(1769, problems::id1769::run);
 
     match hm.get(&args.id) {
         Some(f) => f(),
-        None => todo!(),
+        None => println!("failed to find solution for problemn {}", args.id),
     }
 }

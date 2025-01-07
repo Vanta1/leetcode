@@ -16,6 +16,7 @@ fn main() {
 
     let mut hm = HashMap::<u16, fn()>::new();
     hm.insert(1, problems::id1::run);
+    hm.insert(1408, problems::id1408::run);
     hm.insert(1769, problems::id1769::run);
 
     match hm.get(&args.id) {

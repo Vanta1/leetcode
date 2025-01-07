@@ -40,21 +40,21 @@ impl Solution {
         answer
     }
 
-    // solution from my first attempt. this was accepted and passed all tests, but
-    // performance was very poor w/ runtime of 59ms
-    // pub fn min_operations(boxes: String) -> Vec<i32> {
-    //     let mut answer: Vec<i32> = Vec::with_capacity(boxes.len());
-    //     for i in 0..boxes.len() {
-    //         let mut total = 0i32;
-    //         for (n, char) in boxes.chars().enumerate() {
-    //             if char == '1' && i != n {
-    //                 total += (n as i32 - i as i32).abs();
-    //             }
-    //         }
-    //         answer.push(total);
-    //     }
-    //     answer
-    // }
+    /// Solution from my first attempt. this was accepted and passed all tests, but
+    /// performance was very poor w/ runtime of 59ms
+    pub fn _old_min_operations(boxes: String) -> Vec<i32> {
+        let mut answer: Vec<i32> = Vec::with_capacity(boxes.len());
+        for i in 0..boxes.len() {
+            let mut total = 0i32;
+            for (n, char) in boxes.chars().enumerate() {
+                if char == '1' && i != n {
+                    total += (n as i32 - i as i32).abs();
+                }
+            }
+            answer.push(total);
+        }
+        answer
+    }
 }
 
 pub fn run() {

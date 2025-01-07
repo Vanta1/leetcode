@@ -20,7 +20,11 @@ fn main() {
     hm.insert(1769, problems::id1769::run);
 
     match hm.get(&args.id) {
-        Some(f) => f(),
+        Some(f) => {
+            f();
+            // if f() exits successfully, we know all assert! macros have been satisfied and we're clear for submission
+            println!("all example cases passed!");
+        }
         None => println!("failed to find solution for problemn {}", args.id),
     }
 }

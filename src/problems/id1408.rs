@@ -8,7 +8,7 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn string_matching(words: Vec<String>) -> Vec<String> {
+    pub fn string_matching(_words: Vec<String>) -> Vec<String> {
         vec![]
     }
 }

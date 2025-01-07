@@ -1,6 +1,6 @@
+# direnv 
 .envrc
 /.direnv/
 
-# Added by cargo
-
+# cargo 
 /target

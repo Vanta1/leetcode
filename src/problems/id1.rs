@@ -25,18 +25,18 @@ impl Solution {
         vec![]
     }
 
-    // my first solution, very slow runtime of 62ms but passed all tests
-    // pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    //     let mut solution: Vec<i32> = vec![0, 0];
-    //     for i in 0..nums.len() {
-    //         for n in 0..nums.len() {
-    //             if i != n && (nums[i] + nums[n]) as i32 == target {
-    //                 solution = vec![i as i32, n as i32];
-    //             }
-    //         }
-    //     }
-    //     return solution;
-    // }
+    /// My first solution, very slow runtime of 62ms but passed all tests
+    pub fn _old_two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        let mut solution: Vec<i32> = vec![0, 0];
+        for i in 0..nums.len() {
+            for n in 0..nums.len() {
+                if i != n && nums[i] + nums[n] == target {
+                    solution = vec![i as i32, n as i32];
+                }
+            }
+        }
+        solution
+    }
 }
 
 pub fn run() {

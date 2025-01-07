@@ -8,27 +8,53 @@
 pub struct Solution;
 
 impl Solution {
-    pub fn string_matching(_words: Vec<String>) -> Vec<String> {
-        vec![]
+    /// My first attempt, brute-force solution. accepted with a runtime of 2ms
+    pub fn string_matching(words: Vec<String>) -> Vec<String> {
+        use std::collections::HashMap;
+
+        let mut result: HashMap<String, bool> = HashMap::new();
+
+        for (i, match_word) in words.iter().enumerate() {
+            for (n, check_word) in words.iter().enumerate() {
+                if i != n && match_word.contains(check_word) {
+                    result.insert(check_word.to_string(), true);
+                }
+            }
+        }
+
+        result.into_keys().collect()
     }
 }
 
 pub fn run() {
     assert_eq!(
-        Solution::string_matching(vec![
-            "mass".to_string(),
-            "as".to_string(),
-            "hero".to_string(),
-            "superhero".to_string(),
-        ]),
+        {
+            let mut s = Solution::string_matching(vec![
+                "mass".to_string(),
+                "as".to_string(),
+                "hero".to_string(),
+                "superhero".to_string(),
+            ]);
+            s.sort();
+            s
+        },
         vec!["as".to_string(), "hero".to_string()]
     );
     assert_eq!(
-        Solution::string_matching(vec!["leetcode".into(), "et".into(), "code".into(),]),
-        vec!["et".to_string(), "code".to_string()]
+        {
+            let mut s =
+                Solution::string_matching(vec!["leetcode".into(), "et".into(), "code".into()]);
+            s.sort();
+            s
+        },
+        vec!["code".to_string(), "et".to_string()]
     );
     assert_eq!(
-        Solution::string_matching(vec!["blue".into(), "green".into(), "bu".into(),]),
+        {
+            let mut s = Solution::string_matching(vec!["blue".into(), "green".into(), "bu".into()]);
+            s.sort();
+            s
+        },
         Vec::<String>::new()
     );
 }

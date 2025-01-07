@@ -53,8 +53,8 @@ impl Solution {
     }
 
     /// My solution, failed to pass test 1566/1569 due to overflow errors,
-    /// stemming from naively trying to represent the l1 and l2 as u64s. The final test cases get big enough to
-    /// overflow u64::MAX, or 18,446,744,073,709,551,615
+    /// stemming from naively trying to represent ```l1``` and ```l2``` as u64s. The final test cases get big enough to
+    /// overflow ```u64::MAX```, or ```18,446,744,073,709,551,615```
     pub fn _old_add_two_numbers(
         l1: Option<Box<ListNode>>,
         l2: Option<Box<ListNode>>,

@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use clap::{command, Parser};
 
-mod problems;
+pub mod problems;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]

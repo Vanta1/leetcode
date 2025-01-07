@@ -1,6 +1,14 @@
+/// # 1. Two Sum
+/// Given an array of integers ```nums``` and an integer ```target```,
+/// return indices of the two numbers such that they add up to ```target```.
+///
+/// You may assume that each input would have exactly one solution, and you may not use the same element twice.
+///
+/// You can return the answer in any order.
 pub struct Solution;
 
 impl Solution {
+    /// Solution from the [editorial](https://leetcode.com/problems/two-sum/editorial/). runtime of 0ms
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         use std::collections::HashMap;
 
@@ -13,8 +21,21 @@ impl Solution {
                 }
             }
         }
-        unreachable!()
+        vec![]
     }
+
+    // my first solution, very slow runtime of 62ms but passed all tests
+    // pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+    //     let mut solution: Vec<i32> = vec![0, 0];
+    //     for i in 0..nums.len() {
+    //         for n in 0..nums.len() {
+    //             if i != n && (nums[i] + nums[n]) as i32 == target {
+    //                 solution = vec![i as i32, n as i32];
+    //             }
+    //         }
+    //     }
+    //     return solution;
+    // }
 }
 
 pub fn run() {

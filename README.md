@@ -11,7 +11,7 @@ Creating a new crate every time I work on a new problem is annoying though, and 
 ## Documenting how I add problems 
 ### for myself mostly, or if you'd like to fork this and work on your own problems
 
-Every problem is it's own file with at least 2 elements: a ```Solution``` struct with one function, who's name and signature are stated in the problem on [leetcode.com](https://leetcode.com), and a ```run``` function with the signature ```fn()```. The general format of a problem file and what should be included in the doc comments is described with ```src/problems/example.rs```.
+Every problem is it's own file with at least 2 elements: a ```Solution``` struct with one function, who's name and signature are stated in the problem on [leetcode.com](https://leetcode.com), and a ```run``` function with the signature ```fn()```. The general format of a problem file and what should be included in the doc comments is described with [src/problems/example.rs](crate::problems::example::Solution).
 
 The ```Solution```'s ```impl``` block can be copy pasted directly into LeetCode for submission, and it is all that you need to submit. The ```run``` function runs the example cases, each in an ```assert_eq!()``` statement, with a call to the solution's function and the expected result. These are found in the problem description, make sure you check your tests are the exact same as the examples, or you're going to be debugging problems you've already solved correctly. 
 

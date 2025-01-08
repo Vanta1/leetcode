@@ -20,6 +20,7 @@ fn main() {
     hm.insert(2, problems::id0002::run);
     hm.insert(1408, problems::id1408::run);
     hm.insert(1769, problems::id1769::run);
+    hm.insert(3042, problems::id3042::run);
 
     match hm.get(&args.id) {
         Some(f) => {

@@ -14,7 +14,7 @@ pub struct Solution;
 
 impl Solution {
     /// This was my first solution, and I got a runtime of 10ms, which as of writing beats 75% of submissions.
-    /// So I'm happy and will stick with this, sorry if variables are poorly named I only spent like 20 mins on this
+    /// So I'm happy and will stick with this, sorry if variables are poorly named I only spent like 20 mins on this.
     pub fn word_subsets(words1: Vec<String>, words2: Vec<String>) -> Vec<String> {
         let mut b_count = [0u8; 26];
         for b in words2 {

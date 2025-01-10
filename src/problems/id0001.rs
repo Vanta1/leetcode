@@ -9,7 +9,7 @@
 pub struct Solution;
 
 impl Solution {
-    /// Solution from the [editorial](https://leetcode.com/problems/two-sum/editorial/). runtime of 0ms
+    /// Solution from the [editorial](https://leetcode.com/problems/two-sum/editorial/). Runtime of 0ms.
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         use std::collections::HashMap;
 

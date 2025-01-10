@@ -16,7 +16,7 @@ pub struct Solution;
 
 impl Solution {
     /// This solution is from the [editorial](https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/editorial/),
-    /// and had a runtime of 19ms
+    /// and had a runtime of 19ms.
     pub fn min_operations(boxes: String) -> Vec<i32> {
         let l = boxes.len();
         let mut answer: Vec<i32> = vec![0; l];

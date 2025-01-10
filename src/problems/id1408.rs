@@ -8,7 +8,7 @@
 pub struct Solution;
 
 impl Solution {
-    /// My first attempt, brute-force solution. accepted with a runtime of 2ms
+    /// My first attempt, brute-force solution. Accepted with a runtime of 2ms.
     pub fn string_matching(words: Vec<String>) -> Vec<String> {
         use std::collections::HashMap;
 

@@ -15,7 +15,7 @@
 pub struct Solution;
 
 impl Solution {
-    /// First attempt & solution, passed all tests with runtime of 1ms (only beat 40%)
+    /// First attempt & solution, passed all tests with runtime of 1ms (only beat 40%).
     pub fn count_prefix_suffix_pairs(words: Vec<String>) -> i32 {
         let mut count = 0i32;
         for (i, ps) in words.iter().enumerate() {

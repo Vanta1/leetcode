@@ -23,7 +23,7 @@ impl ListNode {
 
 impl Solution {
     /// Solution from [here](https://leetcode.com/problems/add-two-numbers/solutions/469977/simple-rust-solution-0ms-2-1mb).
-    /// Passed all tests, runtime 0ms
+    /// Passed all tests, runtime 0ms.
     pub fn add_two_numbers(
         l1: Option<Box<ListNode>>,
         l2: Option<Box<ListNode>>,

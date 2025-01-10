@@ -21,6 +21,7 @@ fn main() {
     hm.insert(916, problems::id0916::run);
     hm.insert(1408, problems::id1408::run);
     hm.insert(1769, problems::id1769::run);
+    hm.insert(2185, problems::id2185::run);
     hm.insert(3042, problems::id3042::run);
 
     match hm.get(&args.id) {

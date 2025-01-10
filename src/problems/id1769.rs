@@ -2,7 +2,7 @@
 /// *Daily Challenge 2025-01-06*
 ///
 /// You have ```n``` boxes. You are given a binary string ```boxes``` of length ```n```,
-/// where ```boxes[i]``` is '0' if the ```ith``` box is empty, and ```'1'``` if it contains one ball.
+/// where ```boxes[i]``` is ```'0'``` if the ```ith``` box is empty, and ```'1'``` if it contains one ball.
 ///
 /// In one operation, you can move one ball from a box to an adjacent box.
 /// Box ```i``` is adjacent to box ```j``` if ```abs(i - j) == 1```.

@@ -20,8 +20,10 @@ fn main() {
     hm.insert(1, problems::id0001::run);
     hm.insert(2, problems::id0002::run);
     hm.insert(916, problems::id0916::run);
+    hm.insert(407, problems::id0407::run);
     hm.insert(1400, problems::id1400::run);
     hm.insert(1408, problems::id1408::run);
+    hm.insert(1518, problems::id1518::run);
     hm.insert(1769, problems::id1769::run);
     hm.insert(2116, problems::id2116::run);
     hm.insert(2185, problems::id2185::run);

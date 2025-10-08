@@ -1,11 +1,9 @@
 /// # 1518. Water Bottles
 /// *Daily Challenge 2025-10-01
-///
-///
+/// TODO: .
 pub struct Solution;
 
 impl Solution {
-    // TODO: unfinished problem
     pub fn num_water_bottles(num_bottles: i32, num_exchange: i32) -> i32 {
         let mut full = num_bottles;
         let mut empty = 0;

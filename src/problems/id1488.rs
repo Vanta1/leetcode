@@ -4,6 +4,7 @@
 pub struct Solution;
 
 impl Solution {
+    #[allow(unused)]
     pub fn avoid_flood(rains: Vec<i32>) -> Vec<i32> {
         let mut solutions = Vec::<Vec<i32>>::new();
 

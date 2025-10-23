@@ -1,3 +1,5 @@
+use std::any::{Any, TypeId};
+
 /// # 407. Trapping Rain Water II
 /// *Daily 2025-10-03*
 /// TODO: .
@@ -26,7 +28,7 @@ struct Cell {
     t: CellType,
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum CellType {
     Block,
     Candidate(u8),
@@ -35,11 +37,11 @@ enum CellType {
 impl Solution {
     pub fn trap_rain_water(height_map: Vec<Vec<i32>>) -> i32 {
         let mut hm: Vec<Vec<Cell>> = height_map
-            .iter()
+            .into_iter()
             .map(|v| {
-                v.iter()
+                v.into_iter()
                     .map(|c| Cell {
-                        z: (*c as u32),
+                        z: (c as u32),
                         t: CellType::Block,
                     })
                     .collect()
@@ -66,7 +68,13 @@ impl Solution {
                         hm[y][x].z += 1;
                         changed = true;
                     } else if b >= 1 {
-                        hm[y][x].t = CellType::Candidate(b);
+                        match hm[y][x].t {
+                            CellType::Block => {
+                                hm[y][x].t = CellType::Candidate(b);
+                                changed = true;
+                            }
+                            _ => {}
+                        }
                     }
                 }
             }
@@ -79,14 +87,14 @@ impl Solution {
 }
 
 pub fn run() {
-    //assert_eq!(
-    //    Solution::trap_rain_water(vec![
-    //        vec![1, 4, 3, 1, 3, 2],
-    //        vec![3, 2, 1, 3, 2, 4],
-    //        vec![2, 3, 3, 2, 3, 1]
-    //    ]),
-    //    4
-    //);
+    assert_eq!(
+        Solution::trap_rain_water(vec![
+            vec![1, 4, 3, 1, 3, 2],
+            vec![3, 2, 1, 3, 2, 4],
+            vec![2, 3, 3, 2, 3, 1]
+        ]),
+        4
+    );
     assert_eq!(
         Solution::trap_rain_water(vec![
             vec![3, 3, 3, 3, 3],

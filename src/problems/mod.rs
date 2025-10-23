@@ -12,3 +12,4 @@ pub mod id2116;
 pub mod id2185;
 pub mod id2221;
 pub mod id3042;
+pub mod id3346;

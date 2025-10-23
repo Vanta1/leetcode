@@ -1,0 +1,7 @@
+# in order to match up w/ https://open.kattis.com/languages/rust
+
+[alias]
+n = "new --edition=2021"
+
+[build]
+rustflags = "-C opt-level=3"

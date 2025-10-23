@@ -1,4 +1,4 @@
-use std::any::{Any, TypeId};
+use std::u8;
 
 /// # 407. Trapping Rain Water II
 /// *Daily 2025-10-03*
@@ -18,6 +18,7 @@ impl std::fmt::Display for CellType {
             match self {
                 &CellType::Block => String::from("Block"),
                 &CellType::Candidate(b) => format!("{b:04b}"),
+                &CellType::StrongCandidate(b) => format!("S|{b:04b}"),
             }
         )
     }
@@ -32,6 +33,7 @@ struct Cell {
 enum CellType {
     Block,
     Candidate(u8),
+    StrongCandidate(u8),
 }
 
 impl Solution {
@@ -50,6 +52,7 @@ impl Solution {
         let mut total = 0;
         let mut changed = true;
 
+        // so far, this only fills all entirely surrounded cells
         while changed {
             changed = false;
             for y in 1..(hm.len() - 1) {
@@ -75,6 +78,38 @@ impl Solution {
                             }
                             _ => {}
                         }
+                    }
+                }
+            }
+        }
+
+        // after, we have *candidates* but not all of them
+
+        changed = true;
+        while changed {
+            changed = false;
+            for y in 1..(hm.len() - 1) {
+                for x in 1..(hm[0].len() - 1) {
+                    match hm[y][x].t {
+                        CellType::Candidate(b) => {
+                            let b = !b; // flip all bits in b
+                            let mut c_b = 0;
+
+                            // check if b @ index 0..4 (0-3, inclusive) is a Candidate, if they all are, this becomes a StrongCandidate
+                            for n in 0..4 {
+                                if b & u8::pow(2, n) == u8::pow(2, n) {
+                                    match hm[y - 1][x].t {
+                                        CellType::Candidate(_) => c_b += 1,
+                                        _ => {}
+                                    }
+                                }
+                            }
+
+                            if c_b == b {
+                                hm[y][x].t = CellType::StrongCandidate(!b) // remember to un-flip b
+                            }
+                        }
+                        _ => {}
                     }
                 }
             }

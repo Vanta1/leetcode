@@ -4,11 +4,10 @@
 pub struct Solution;
 
 impl Solution {
-    #[allow(unused)]
     pub fn avoid_flood(rains: Vec<i32>) -> Vec<i32> {
-        let mut solutions = Vec::<Vec<i32>>::new();
-
-        let mut full_lakes = Vec::<i32>::new();
+        use std::collections::HashSet;
+        let _full_lakes = HashSet::<i32>::new();
+        let _solution = rains.iter().for_each(|day| if *day > 0 {});
 
         todo!()
     }
